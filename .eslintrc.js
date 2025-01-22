@@ -8,12 +8,15 @@ module.exports = {
     },
   },
   extends: [
+    'next',
+    'next/core-web-vitals',
     'eslint:recommended',
+    'plugin:prettier/recommended',
     'plugin:react/recommended',
     'plugin:react-hooks/recommended',
     'plugin:@typescript-eslint/recommended',
-    'plugin:prettier/recommended',
-    'next/core-web-vitals',
+    'plugin:import/recommended',
+    'plugin:import/typescript',
   ],
   plugins: ['react', '@typescript-eslint', 'prettier'],
   rules: {
@@ -28,7 +31,7 @@ module.exports = {
     '@typescript-eslint/no-explicit-any': 'warn', // any 사용을 경고
     'no-console': 'warn', // console.log 사용을 경고
     'no-unused-vars': 'off', // TypeScript 규칙으로 대체
-    'react/display-name': 'off', // 익명 함수의 displayName 경고 끔
+    'import/order': [2, { alphabetize: { order: 'asc' } }], // import 순서 정렬
   },
   settings: {
     react: {
