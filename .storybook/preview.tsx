@@ -1,6 +1,5 @@
 import type { Preview, StoryFn } from '@storybook/react';
 import React from 'react';
-import * as NextImage from 'next/image';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import { theme } from '../src/themes';
 
@@ -21,9 +20,6 @@ export const GlobalStyle = createGlobalStyle`
     transition: .25s;
     color: #000000;
   }
-  button {
-    
-  }
 `;
 
 const ThemeDecorator = (Story: StoryFn, context: any) => {
@@ -37,18 +33,6 @@ const ThemeDecorator = (Story: StoryFn, context: any) => {
   );
 };
 
-const OriginalNextImage = NextImage.default;
-
-Object.defineProperty(NextImage, 'default', {
-  configurable: true,
-  value: (props) =>
-    typeof props.src === 'string' ? (
-      <OriginalNextImage {...props} unoptimized blurDataURL={props.src} />
-    ) : (
-      <OriginalNextImage {...props} unoptimized />
-    ),
-});
-
 const preview: Preview = {
   decorators: [ThemeDecorator],
   parameters: {
@@ -59,6 +43,9 @@ const preview: Preview = {
         color: /(background|color)$/i,
         date: /Date$/i,
       },
+    },
+    nextjs: {
+      appDirectory: true,
     },
   },
 };
