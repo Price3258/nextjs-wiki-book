@@ -7,17 +7,7 @@ module.exports = {
       jsx: true,
     },
   },
-  extends: [
-    'next',
-    'next/core-web-vitals',
-    'eslint:recommended',
-    'plugin:prettier/recommended',
-    'plugin:react/recommended',
-    'plugin:react-hooks/recommended',
-    'plugin:@typescript-eslint/recommended',
-    'plugin:import/recommended',
-    'plugin:import/typescript',
-  ],
+  extends: ['next', 'next/core-web-vitals', 'eslint:recommended', 'plugin:prettier/recommended', 'plugin:react/recommended', 'plugin:react-hooks/recommended', 'plugin:@typescript-eslint/recommended', 'plugin:import/recommended', 'plugin:import/typescript', 'plugin:storybook/recommended'],
   plugins: ['react', '@typescript-eslint', 'prettier'],
   rules: {
     // ESLint 규칙
