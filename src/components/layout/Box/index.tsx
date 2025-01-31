@@ -23,6 +23,7 @@ export type BoxProps = {
   paddingRight?: Responsive<Space>;
   paddingBottom?: Responsive<Space>;
   paddingLeft?: Responsive<Space>;
+  theme: any; // props에 에러나서 추가
 };
 
 /**

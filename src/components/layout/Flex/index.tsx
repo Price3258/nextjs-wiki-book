@@ -27,7 +27,7 @@ type FlexProps = BoxProps & {
   justifySelf?: Responsive<CSSPropertyJustifySelf>;
   alignSelf?: Responsive<CSSPropertyAlignSelf>;
   order?: Responsive<string>;
-  // theme: any; // props에 에러나서 추가
+  theme: any; // props에 에러나서 추가
 };
 
 /**

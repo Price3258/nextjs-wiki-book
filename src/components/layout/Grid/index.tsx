@@ -23,6 +23,7 @@ type GridProps = BoxProps & {
   gridTemplateRows?: Responsive<string>;
   gridTemplateAreas?: Responsive<CSSPropertyGridArea>;
   gridArea?: Responsive<string>;
+  theme: any; // props에 에러나서 추가
 };
 
 /**
