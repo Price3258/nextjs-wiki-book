@@ -1,4 +1,5 @@
-const fontSizes: any = [12, 14, 16, 20, 24, 32];
+// const fontSizes: any = [12, 14, 16, 20, 24, 32];
+const fontSizes: any = ['12px', '14px', '16px', '20px', '24px', '32px'];
 
 fontSizes.extraSmal = fontSizes[0];
 fontSizes.small = fontSizes[1];
