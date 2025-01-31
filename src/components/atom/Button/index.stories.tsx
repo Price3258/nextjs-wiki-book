@@ -1,14 +1,14 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react'
-import Button from './index'
+import { Meta, StoryObj } from '@storybook/react';
+import Button from './index';
 
-export default {
+const meta: Meta<typeof Button> = {
   title: 'Atoms/Button',
+  component: Button,
   argTypes: {
     variant: {
       options: ['primary', 'secondary'],
       control: { type: 'radio' },
       defaultValue: 'primary',
-      // docs에 표시할 내용을 설정
       description: '버튼 변형',
       table: {
         type: { summary: 'primary | secondary' },
@@ -52,18 +52,22 @@ export default {
       },
     },
   },
-} as ComponentMeta<typeof Button>
+};
 
-const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />
+export default meta;
+type Story = StoryObj<typeof Button>;
 
-// Primary 버튼
-export const Primary = Template.bind({})
-Primary.args = { variant: 'primary', children: 'Primary Button' }
+// ✅ Primary 버튼
+export const Primary: Story = {
+  args: { variant: 'primary', children: 'Primary Button' },
+};
 
-// Secondary 버튼
-export const Secondary = Template.bind({})
-Secondary.args = { variant: 'secondary', children: 'Secondary Button' }
+// ✅ Secondary 버튼
+export const Secondary: Story = {
+  args: { variant: 'secondary', children: 'Secondary Button' },
+};
 
-// Disabled 버튼
-export const Disabled = Template.bind({})
-Disabled.args = { disabled: true, children: 'Disabled Button' }
+// ✅ Disabled 버튼
+export const Disabled: Story = {
+  args: { disabled: true, children: 'Disabled Button' },
+};
