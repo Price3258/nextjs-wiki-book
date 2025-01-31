@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { SearchIcon } from './';
+import { SearchIcon } from '.';
 import colors from '@/themes/colors';
 
 const meta: Meta<typeof SearchIcon> = {
