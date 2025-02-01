@@ -1,20 +1,20 @@
-import React, { useCallback, useState } from 'react'
-import styled from 'styled-components'
+import React, { useCallback, useState } from 'react';
+import styled from 'styled-components';
 
 export interface TextAreaProps
   extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
   /**
    * 최소 행 수
    */
-  minRows?: number
+  minRows?: number;
   /**
    * 최대 행 수
    */
-  maxRows?: number
+  maxRows?: number;
   /**
    * 변형 에러 플래그
    */
-  hasError?: boolean
+  hasError?: boolean;
 }
 
 const StyledTextArea = styled.textarea<{ hasError?: boolean }>`
@@ -36,7 +36,7 @@ const StyledTextArea = styled.textarea<{ hasError?: boolean }>`
   &::placeholder {
     color: ${({ theme }) => theme.colors.placeholder};
   }
-`
+`;
 
 /**
  * 텍스트 영역
@@ -50,39 +50,41 @@ const TextArea = (props: TextAreaProps) => {
     hasError,
     onChange,
     ...rest
-  } = props
-  const [textareaRows, setTextareaRows] = useState(Math.min(rows, minRows))
+  } = props;
+  const [textareaRows, setTextareaRows] = useState(Math.min(rows, minRows));
 
   console.assert(
     !(rows < minRows),
     'TextArea: rows should be greater than minRows.',
-  )
+  );
 
   const handleChange = useCallback(
     (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-      const textareaLineHeight = 24
-      const previousRows = e.target.rows
+      const textareaLineHeight = 24;
+      const previousRows = e.target.rows;
 
-      e.target.rows = minRows // 행 수 초기화
+      e.target.rows = minRows; // 행 수 초기화
 
       // 현재 행 수
-      const currentRows = Math.floor(e.target.scrollHeight / textareaLineHeight)
+      const currentRows = Math.floor(
+        e.target.scrollHeight / textareaLineHeight,
+      );
 
       if (currentRows === previousRows) {
-        e.target.rows = currentRows
+        e.target.rows = currentRows;
       }
 
       if (currentRows >= maxRows) {
-        e.target.rows = maxRows
-        e.target.scrollTop = e.target.scrollHeight
+        e.target.rows = maxRows;
+        e.target.scrollTop = e.target.scrollHeight;
       }
 
       // 최대를 넘지 않도록 행 수 초기화
-      setTextareaRows(currentRows < maxRows ? currentRows : maxRows)
-      onChange && onChange(e)
+      setTextareaRows(currentRows < maxRows ? currentRows : maxRows);
+      onChange && onChange(e);
     },
     [onChange, minRows, maxRows],
-  )
+  );
 
   return (
     <StyledTextArea
@@ -94,13 +96,7 @@ const TextArea = (props: TextAreaProps) => {
     >
       {children}
     </StyledTextArea>
-  )
-}
+  );
+};
 
-TextArea.defaultProps = {
-  rows: 5,
-  minRows: 5,
-  maxRows: 10,
-}
-
-export default TextArea
+export default TextArea;
