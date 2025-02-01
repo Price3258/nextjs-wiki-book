@@ -31,6 +31,7 @@ type GridProps = BoxProps & {
  * grid 레이아웃 구현에 사용한다
  */
 const Grid = styled(Box)<GridProps>`
+  display: 'grid';
   ${(props) => toPropValue('grid-gap', props.gridGap, props.theme)}
   ${(props) => toPropValue('grid-column-gap', props.gridColumnGap, props.theme)}
   ${(props) => toPropValue('grid-row-gap', props.gridRowGap, props.theme)}
@@ -50,11 +51,7 @@ const Grid = styled(Box)<GridProps>`
     toPropValue('grid-template-rows', props.gridTemplateRows, props.theme)}
   ${(props) =>
     toPropValue('grid-template-areas', props.gridTemplateAreas, props.theme)}
-  ${(props) => toPropValue('grid-area', props.gridArea, props.theme)}
+  ${(props) => toPropValue('grid-area', props.gridArea, props.theme)};
 `;
-
-Grid.defaultProps = {
-  display: 'grid',
-};
 
 export default Grid;
