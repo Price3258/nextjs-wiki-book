@@ -125,6 +125,7 @@ const Header = () => {
                         width={24}
                         height={24}
                         data-testid="profile-shape-image"
+                        alt="로그인"
                       />
                     </Anchor>
                   </Link>

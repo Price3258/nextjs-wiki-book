@@ -70,7 +70,7 @@ const CartProduct = ({
         <Box padding={1}>
           <Flex
             height="100%"
-            flexDirection="row"
+            flexDirection="column"
             justifyContent="space-between"
           >
             <Box>
@@ -84,7 +84,7 @@ const CartProduct = ({
                 {title}
               </Text>
               <Text margin={0} as="p">
-                {price}원
+                {price}원321321
               </Text>
             </Box>
             <Flex marginTop={{ base: 2, md: 0 }}>
