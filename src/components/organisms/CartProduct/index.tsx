@@ -70,7 +70,7 @@ const CartProduct = ({
         <Box padding={1}>
           <Flex
             height="100%"
-            flexDirection="column"
+            flexDirection="row"
             justifyContent="space-between"
           >
             <Box>
