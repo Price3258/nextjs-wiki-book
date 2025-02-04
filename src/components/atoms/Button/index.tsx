@@ -47,7 +47,7 @@ export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
       backgroundColor?: Responsive<Color>;
     };
   };
-  theme: any;
+  theme?: any; // 🔥 수정 (any 대신 적절한 타입 적용 가능)
 };
 
 const variants = {
@@ -85,7 +85,6 @@ const variants = {
  */
 const Button = styled.button<ButtonProps>`
   ${({ variant = 'primary', color, backgroundColor, pseudoClass, theme }) => {
-    // 변형 스타일 적용
     if (variant && variants[variant]) {
       const styles = [];
       !color &&
@@ -149,20 +148,21 @@ const Button = styled.button<ButtonProps>`
     toPropValue('padding-bottom', props.paddingBottom ?? 1, props.theme)}
   ${(props) =>
     toPropValue('padding-right', props.paddingRight ?? 2, props.theme)}
+
   &:hover {
     ${(props) =>
-      toPropValue(
-        'background-color',
-        props?.pseudoClass?.hover?.backgroundColor,
-      )}
+      props.pseudoClass?.hover?.backgroundColor &&
+      toPropValue('background-color', props.pseudoClass.hover.backgroundColor)}
   }
   &:disabled {
     ${(props) =>
+      props.pseudoClass?.disabled?.backgroundColor &&
       toPropValue(
         'background-color',
-        props?.pseudoClass?.disabled?.backgroundColor,
+        props.pseudoClass.disabled.backgroundColor,
       )}
   }
+
   cursor: pointer;
   outline: 0;
   text-decoration: none;

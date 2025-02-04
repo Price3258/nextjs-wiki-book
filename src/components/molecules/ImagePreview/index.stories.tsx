@@ -1,8 +1,8 @@
+import { Meta, StoryObj } from '@storybook/react';
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import ImagePreview from './';
 import Dropzone from '@/components/molecules/Dropzone';
-import { Meta, StoryObj } from '@storybook/react';
 
 const meta: Meta<typeof ImagePreview> = {
   title: 'Molecules/ImagePreview',

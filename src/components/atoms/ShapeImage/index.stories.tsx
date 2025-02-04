@@ -45,9 +45,19 @@ export default meta;
 type Story = StoryObj<typeof ShapeImage>;
 
 export const Circle: Story = {
-  args: { src: '/images/sample/1.jpg', shape: 'circle' },
+  args: {
+    src: '/images/sample/1.jpg',
+    shape: 'circle',
+    width: 120,
+    height: 120,
+  },
 };
 
 export const Square: Story = {
-  args: { src: '/images/sample/1.jpg', shape: 'square' },
+  args: {
+    src: '/images/sample/1.jpg',
+    shape: 'square',
+    width: 120,
+    height: 120,
+  },
 };

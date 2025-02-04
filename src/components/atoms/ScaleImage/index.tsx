@@ -11,6 +11,7 @@ type ScaleImageProps = Omit<ImageProps, 'quality'> & {
 const ScaleEffectImageContainer = styled.div<{
   width: Responsive<string>;
   height: Responsive<string>;
+  theme: any;
 }>`
   overflow: hidden;
   ${({ width, theme }) => toPropValue('width', width, theme)}
@@ -39,7 +40,6 @@ const ScaleImage = ({
   >
     <ScaleEffectImage
       quality="85"
-      alt={props.alt ?? 'Product Image'}
       height={props.height ?? 320}
       width={props.width ?? 320}
       {...props}

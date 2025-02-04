@@ -60,70 +60,70 @@ const meta: Meta<typeof Text> = {
         type: { summary: 'string' },
       },
     },
-    m: {
+    margin: {
       control: { type: 'number' },
       description: '마진',
       table: {
         type: { summary: 'number' },
       },
     },
-    mt: {
+    marginTop: {
       control: { type: 'number' },
       description: '위쪽 마진',
       table: {
         type: { summary: 'number' },
       },
     },
-    mr: {
+    marginRight: {
       control: { type: 'number' },
       description: '오른쪽 마진',
       table: {
         type: { summary: 'number' },
       },
     },
-    mb: {
+    marginBottom: {
       control: { type: 'number' },
       description: '아래쪽 마진',
       table: {
         type: { summary: 'number' },
       },
     },
-    ml: {
+    marginLeft: {
       control: { type: 'number' },
       description: '왼쪽 마진',
       table: {
         type: { summary: 'number' },
       },
     },
-    p: {
+    padding: {
       control: { type: 'number' },
       description: '패딩',
       table: {
         type: { summary: 'number' },
       },
     },
-    pt: {
+    paddingTop: {
       control: { type: 'number' },
       description: '위쪽 패딩',
       table: {
         type: { summary: 'number' },
       },
     },
-    pr: {
+    paddingRight: {
       control: { type: 'number' },
       description: '오른쪽 패딩',
       table: {
         type: { summary: 'number' },
       },
     },
-    pb: {
+    paddingBottom: {
       control: { type: 'number' },
       description: '아래쪽 패딩',
       table: {
         type: { summary: 'number' },
       },
     },
-    pl: {
+    paddingLeft: {
       control: { type: 'number' },
       description: '왼쪽 패딩',
       table: {

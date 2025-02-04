@@ -14,7 +14,7 @@ const nextConfig: NextConfig = {
 
     comilerConfig = {
       ...comilerConfig,
-      styeldComponents: true,
+      styledComponents: true,
     };
 
     return comilerConfig;

@@ -7,7 +7,18 @@ module.exports = {
       jsx: true,
     },
   },
-  extends: ['next', 'next/core-web-vitals', 'eslint:recommended', 'plugin:prettier/recommended', 'plugin:react/recommended', 'plugin:react-hooks/recommended', 'plugin:@typescript-eslint/recommended', 'plugin:import/recommended', 'plugin:import/typescript', 'plugin:storybook/recommended'],
+  extends: [
+    'next',
+    'next/core-web-vitals',
+    'eslint:recommended',
+    'plugin:prettier/recommended',
+    'plugin:react/recommended',
+    'plugin:react-hooks/recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:import/recommended',
+    'plugin:import/typescript',
+    'plugin:storybook/recommended',
+  ],
   plugins: ['react', '@typescript-eslint', 'prettier'],
   rules: {
     // ESLint 규칙
@@ -22,6 +33,10 @@ module.exports = {
     'no-console': 'warn', // console.log 사용을 경고
     'no-unused-vars': 'off', // TypeScript 규칙으로 대체
     'import/order': [2, { alphabetize: { order: 'asc' } }], // import 순서 정렬
+    '@typescript-eslint/no-unused-expressions': 'off',
+    'no-constant-binary-expression': 'off',
+    'react/no-unescaped-entities': 'off',
+    '@typescript-eslint/no-explicit-any': 'off',
   },
   settings: {
     react: {

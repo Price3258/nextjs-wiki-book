@@ -1,6 +1,6 @@
 // types는 뒤에서 정의
-import { fetcher } from '@/utils';
 import { ApiContext, User } from '@/types';
+import { fetcher } from '@/utils';
 // 앞에서 정의한 src/utils/index.ts로부터 읽는다
 
 export type SigninParams = {
